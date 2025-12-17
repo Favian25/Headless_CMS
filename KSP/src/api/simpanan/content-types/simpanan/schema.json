@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "simpanans",
+  "info": {
+    "singularName": "simpanan",
+    "pluralName": "simpanans",
+    "displayName": "simpanan"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tanggal": {
+      "type": "date"
+    },
+    "jumlah": {
+      "type": "decimal"
+    },
+    "keterangan": {
+      "type": "text"
+    },
+    "anggota": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::anggota.anggota",
+      "inversedBy": "simpanans"
+    },
+    "jenis_simpanan": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::jenis-simpanan.jenis-simpanan",
+      "inversedBy": "simpanans"
+    },
+    "transaksi_kaz": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::transaksi-kaz.transaksi-kaz",
+      "inversedBy": "simpanans"
+    }
+  }
+}

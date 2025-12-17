@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pinjamen",
+  "info": {
+    "singularName": "pinjaman",
+    "pluralName": "pinjamen",
+    "displayName": "pinjaman"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tanggal_pinjam": {
+      "type": "date"
+    },
+    "jumlah_pinjam": {
+      "type": "decimal"
+    },
+    "bunga": {
+      "type": "decimal"
+    },
+    "tenor": {
+      "type": "integer"
+    },
+    "total_bayar": {
+      "type": "decimal"
+    },
+    "sisa": {
+      "type": "decimal"
+    },
+    "status_pinjaman": {
+      "type": "enumeration",
+      "enum": [
+        "berjalan",
+        "lunas",
+        "gagal"
+      ]
+    },
+    "anggota": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::anggota.anggota",
+      "inversedBy": "pinjamen"
+    },
+    "angsurans": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::angsuran.angsuran",
+      "mappedBy": "pinjaman"
+    },
+    "transaksi_kaz": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::transaksi-kaz.transaksi-kaz",
+      "inversedBy": "pinjamen"
+    }
+  }
+}

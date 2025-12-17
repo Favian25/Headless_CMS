@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "anggotas",
+  "info": {
+    "singularName": "anggota",
+    "pluralName": "anggotas",
+    "displayName": "anggota"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "kode_anggota": {
+      "type": "string",
+      "required": true
+    },
+    "nik": {
+      "type": "biginteger",
+      "required": true
+    },
+    "nama": {
+      "type": "string"
+    },
+    "alamat": {
+      "type": "text"
+    },
+    "telepon": {
+      "type": "biginteger"
+    },
+    "tanggal_daftar": {
+      "type": "date"
+    },
+    "status_anggota": {
+      "type": "enumeration",
+      "enum": [
+        "aktif",
+        "nonaktif"
+      ]
+    },
+    "simpanans": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::simpanan.simpanan",
+      "mappedBy": "anggota"
+    },
+    "pinjamen": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pinjaman.pinjaman",
+      "mappedBy": "anggota"
+    }
+  }
+}

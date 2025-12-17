@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "setting_bungas",
+  "info": {
+    "singularName": "setting-bunga",
+    "pluralName": "setting-bungas",
+    "displayName": "setting_bunga"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "bunga_pinjaman": {
+      "type": "decimal"
+    },
+    "update_terakhir": {
+      "type": "datetime"
+    }
+  }
+}

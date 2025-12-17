@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transaksi_kazs",
+  "info": {
+    "singularName": "transaksi-kaz",
+    "pluralName": "transaksi-kazs",
+    "displayName": "transaksi_kaz"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tanggal": {
+      "type": "date"
+    },
+    "kategori": {
+      "type": "enumeration",
+      "enum": [
+        "simpanan",
+        "pinjaman",
+        "angsuran",
+        "lain"
+      ]
+    },
+    "nominal": {
+      "type": "decimal"
+    },
+    "saldo": {
+      "type": "decimal"
+    },
+    "keterangan": {
+      "type": "text"
+    },
+    "pinjamen": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pinjaman.pinjaman",
+      "mappedBy": "transaksi_kaz"
+    },
+    "simpanans": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::simpanan.simpanan",
+      "mappedBy": "transaksi_kaz"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "angsurans",
+  "info": {
+    "singularName": "angsuran",
+    "pluralName": "angsurans",
+    "displayName": "angsuran"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tanggal_bayar": {
+      "type": "date"
+    },
+    "jumlah_bayar": {
+      "type": "decimal"
+    },
+    "bulan_ke": {
+      "type": "integer"
+    },
+    "pinjaman": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::pinjaman.pinjaman",
+      "inversedBy": "angsurans"
+    }
+  }
+}
